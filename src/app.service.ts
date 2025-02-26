@@ -9,4 +9,10 @@ export class AppService {
   krajaCustom(): string {
     return 'Djes Kraja!';
   }
+
+  jsonTest(): object {
+    return {
+      data: 'jebiga',
+    };
+  }
 }

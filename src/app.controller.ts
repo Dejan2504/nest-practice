@@ -1,5 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
+import { Kraja } from './kraja/kraja.decorator';
 
 @Controller()
 export class AppController {
@@ -10,8 +11,14 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('kraja')
-  krajaCustom(): string {
+  @Get('test')
+  krajaCustom(@Kraja() params: Record<string, string>): string {
+    console.log('kastm', params);
     return this.appService.krajaCustom();
+  }
+
+  @Get('json/jbg')
+  jsonTest(): object {
+    return this.appService.jsonTest();
   }
 }
